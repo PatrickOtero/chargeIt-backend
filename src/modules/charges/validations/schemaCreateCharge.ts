@@ -4,10 +4,10 @@ import { ChargeStatus } from "../enum/chargeStatus.enum";
 const chargeStatusValues = Object.values(ChargeStatus)
 
 const chargeValidationSchema = yup.object().shape({
-  customerName: yup.string()
-    .required('O nome é obrigatório')
-    .min(2, 'O nome deve ter pelo menos 2 caracteres')
-    .max(50, 'O nome deve ter no máximo 50 caracteres'),
+  customerCpf: yup.string()
+  .required('O cpf é obrigatório')
+  .min(11, 'Insira um cpf válido')
+  .max(11, 'Insira um cpf válido'),
   
   description: yup.string()
     .required('A descrição é obrigatória')

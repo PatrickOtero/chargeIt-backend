@@ -3,6 +3,7 @@ import { container } from "tsyringe";
 import * as yup from "yup"
 import chargeValidationSchema from "../../validations/schemaCreateCharge";
 import { CreatechargeUseCase } from "./CreateChargeUseCase.useCase";
+import { AppError } from "../../../../errors/appError";
 
 export class CreateChargeController {
     async handle(req: Request, res: Response): Promise<Response> {
@@ -17,14 +18,9 @@ export class CreateChargeController {
         } catch (error) {
             if (error instanceof yup.ValidationError) {
 
-                return res.status(400).json({
-                    message: 'Erro de validação',
-                    errors: error.errors, 
-                });
+                throw new AppError(`Erro de validação ${error.errors}`)
             }
-            return res.status(500).json({
-                message: 'Erro interno do servidor', error
-            });
+                throw new AppError(`Erro interno do servidor ${error.message}`)
         }
     }
 }

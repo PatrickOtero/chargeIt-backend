@@ -12,11 +12,11 @@ container.registerSingleton<IUserRepository>(
 )
 
 container.registerSingleton<ICustomerRepository>(
-    "UserRepository",
+    "CustomerRepository",
     CustomerRepository
 )
 
 container.registerSingleton<IChargeRepository>(
-    "UserRepository",
+    "ChargeRepository",
     chargeRepository
 )

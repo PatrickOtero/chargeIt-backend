@@ -1,12 +1,12 @@
 import { IGlobalResponse } from "../../../shared/interfaces/GlobalInterfaces"
-import { User } from "../../../database/entities/Customer.entity"
+import { Customer } from "../../../database/entities/Customer.entity"
 
-interface IUserResponseContent {
+interface ICustomerResponseContent {
     message: string
-    content?: User | Partial<User> | User[],
+    content?: Customer | Partial<Customer> | Customer[],
     token?: string
 }
 
-export interface IUserResponse extends IGlobalResponse {
-    data: IUserResponseContent
+export interface ICustomerResponse extends IGlobalResponse {
+    data: ICustomerResponseContent
 }

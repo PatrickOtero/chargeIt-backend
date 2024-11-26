@@ -3,6 +3,6 @@ export interface ICreateChargeDTO {
     customerCpf: string
     description: string
     chargeStatus: string
-    chargeValue: number
+    chargeValue: string
     chargeDueDate: Date
 }

@@ -7,7 +7,7 @@ import { AppError } from "../../../../errors/appError"
 @injectable()
 export class CreatechargeUseCase {
     constructor(
-        @inject("chargeRepository")
+        @inject("ChargeRepository")
         private chargeRepository: IChargeRepository,
         @inject("CustomerRepository")
         private customerRepository: ICustomerRepository) {}

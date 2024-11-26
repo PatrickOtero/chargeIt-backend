@@ -24,7 +24,7 @@ export class Charge {
     chargeStatus: string
 
     @Column()
-    chargeValue: number
+    chargeValue: string
 
     @Column()
     chargeDueDate: Date
